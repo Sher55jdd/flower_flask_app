@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bloomify 🌸</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f8;
+      text-align: center;
+      margin-top: 80px;
+    }
+    h1 {
+      color: #ff5f7a;
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+      color: #444;
+    }
+    a {
+      display: inline-block;
+      margin: 15px;
+      text-decoration: none;
+      color: white;
+      background-color: #ff91a4;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    a:hover {
+      background-color: #ff5f7a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Bloomify 🌸</h1>
+  <p>Fresh, beautiful flowers delivered straight to your heart 💐</p>
+
+  <a href="{{ url_for('login') }}">Login</a>
+  <a href="{{ url_for('register') }}">Register</a>
+  <a href="{{ url_for('show_flowers') }}">Shop Flowers</a>
+</body>
+</html>
+
+
+
+

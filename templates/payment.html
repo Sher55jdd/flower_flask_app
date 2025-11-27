@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - Bloomify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            background-color: #fff6f9;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        h1 {
+            color: #ff4d88;
+            margin-bottom: 10px;
+        }
+
+        .summary-box {
+            background: #ffffff;
+            width: 350px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .payment-form {
+            margin-top: 30px;
+            background: #ffffff;
+            width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .pay-btn {
+            display: block;
+            width: 100%;
+            background-color: #ff6699;
+            color: white;
+            padding: 12px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .pay-btn:hover {
+            background-color: #ff3377;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>💳 Payment</h1>
+
+    <!-- ORDER SUMMARY -->
+    <div class="summary-box">
+        <h2>Your Order Summary</h2>
+
+        <ul>
+        {% for item in cart %}
+            <li>{{ item.name }} - ${{ item.price }}</li>
+        {% endfor %}
+        </ul>
+
+        <p><b>Total: ${{ total }}</b></p>
+    </div>
+
+
+    <form class="payment-form" method="POST">
+
+        <label>Name on Card</label>
+        <input type="text" name="name" required>
+
+        <label>Card Number</label>
+        <input type="text" name="card" required>
+
+        <label>Address</label>
+        <input type="text" name="address" required>
+
+        <button type="submit" class="pay-btn">Pay ${{ total }}</button>
+    </form>
+
+</body>
+</html>

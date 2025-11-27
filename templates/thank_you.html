@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You - Bloomify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            background-color: #fff6f8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .box {
+            background: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #ff4d88;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+        }
+
+        .home-btn {
+            margin-top: 25px;
+            display: inline-block;
+            background: #ff6699;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .home-btn:hover {
+            background: #ff3377;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>🌸 Thank You, {{ name }}!</h1>
+
+    <p>Your payment of <b>${{ total }}</b> was successful.</p>
+
+    <a href="{{ url_for('show_flowers') }}" class="home-btn">Continue Shopping 🌼</a>
+</div>
+
+</body>
+</html>
+
